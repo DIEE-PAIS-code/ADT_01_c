@@ -10,10 +10,10 @@
 
 /* Internal representation of MyData. */
 
-struct MyData {
+typedef struct MyData {
     int v1;
     int v2;
-};
+} MyDataStruct;
 
 void showMyData(MyDataPtr p){
     printf("%d - %d\n",p->v1, p->v2 );
@@ -24,9 +24,10 @@ void setMyData(MyDataPtr p, int v1, int v2){
     p->v2=v2;
 }
 
-MyDataPtr createMyData(){
-    return malloc(sizeof(MyDataPtr ));
+MyDataStruct * createMyData(){
+    return malloc(sizeof(MyDataStruct ));
 }
+
 
 void destroyMyData (MyDataPtr p){
     free(p);
